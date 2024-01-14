@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yvtet1n01us8"
+path="res://.godot/imported/pickupCoin (15).wav-d6d93b7b3e9369ab46171f53ecd43675.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Pick up coins/pickupCoin (15).wav"
+dest_files=["res://.godot/imported/pickupCoin (15).wav-d6d93b7b3e9369ab46171f53ecd43675.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,193 @@
+[gd_scene load_steps=13 format=3 uid="uid://drgt7rl84l5fq"]
+
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="1_ij78j"]
+[ext_resource type="Script" path="res://Pantallas/settings.gd" id="1_n42x2"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="3_us78q"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="4_fwstm"]
+[ext_resource type="AudioStream" uid="uid://bv78oriobi1qu" path="res://Assets/Audio/SFX_UI_Exit.wav" id="5_dqv1t"]
+[ext_resource type="AudioStream" uid="uid://cbm7hdickt2m2" path="res://Assets/Audio/SFX_UI_CloseMenu.wav" id="6_fwyfh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_flyis"]
+font = ExtResource("1_ij78j")
+font_size = 12
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7svk3"]
+font = ExtResource("1_ij78j")
+font_size = 14
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_whd1x"]
+font = ExtResource("1_ij78j")
+font_size = 14
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_id6ww"]
+default_font = ExtResource("1_ij78j")
+default_font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_0jixf"]
+font = ExtResource("1_ij78j")
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4ai0"]
+font = ExtResource("1_ij78j")
+font_size = 14
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[node name="VBoxContainerSettings" type="VBoxContainer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 10.0
+offset_right = 263.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_vertical = 4
+script = ExtResource("1_n42x2")
+
+[node name="LabelVideo" type="Label" parent="."]
+layout_mode = 2
+text = "Video"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelFullscreen" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Pantalla completa"
+label_settings = SubResource("LabelSettings_7svk3")
+vertical_alignment = 2
+
+[node name="CheckBoxFullscreen" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+vertical_icon_alignment = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelWindowSize" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Tamaño ventana    "
+label_settings = SubResource("LabelSettings_whd1x")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="OptionButtonWSize" type="OptionButton" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = SubResource("Theme_id6ww")
+theme_override_fonts/font = ExtResource("1_ij78j")
+theme_override_font_sizes/font_size = 12
+alignment = 1
+item_count = 4
+selected = 1
+popup/item_0/text = "640 x 360"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = "1920 x 1080"
+popup/item_2/id = 2
+popup/item_3/text = "3840 x 2160"
+popup/item_3/id = 3
+
+[node name="LabelSound" type="Label" parent="."]
+layout_mode = 2
+text = "Sonido"
+label_settings = SubResource("LabelSettings_0jixf")
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelSFX" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "SFX               "
+label_settings = SubResource("LabelSettings_x4ai0")
+
+[node name="HSliderSFX" type="HSlider" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -50.0
+max_value = 5.0
+value = -10.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelMusic" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "Música            "
+label_settings = SubResource("LabelSettings_x4ai0")
+
+[node name="HSliderMusic" type="HSlider" parent="HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -50.0
+max_value = 5.0
+value = -10.0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelMaster" type="Label" parent="HBoxContainer5"]
+layout_mode = 2
+text = "Master            "
+label_settings = SubResource("LabelSettings_x4ai0")
+
+[node name="HSliderMaster" type="HSlider" parent="HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -50.0
+max_value = 5.0
+value = -10.0
+
+[node name="ButtonAtras" type="Button" parent="."]
+layout_mode = 2
+text = "Atrás"
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_us78q")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fwstm")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dqv1t")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerAtras" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fwyfh")
+bus = &"SFX"
+
+[connection signal="focus_exited" from="HBoxContainer/CheckBoxFullscreen" to="." method="_on_check_box_fullscreen_focus_exited"]
+[connection signal="pressed" from="HBoxContainer/CheckBoxFullscreen" to="." method="_on_check_box_fullscreen_pressed"]
+[connection signal="focus_exited" from="HBoxContainer2/OptionButtonWSize" to="." method="_on_option_button_w_size_focus_exited"]
+[connection signal="item_focused" from="HBoxContainer2/OptionButtonWSize" to="." method="_on_option_button_w_size_item_focused"]
+[connection signal="item_selected" from="HBoxContainer2/OptionButtonWSize" to="." method="_on_option_button_w_size_item_selected"]
+[connection signal="focus_exited" from="HBoxContainer3/HSliderSFX" to="." method="_on_h_slider_sfx_focus_exited"]
+[connection signal="value_changed" from="HBoxContainer3/HSliderSFX" to="." method="_on_h_slider_sfx_value_changed"]
+[connection signal="focus_exited" from="HBoxContainer4/HSliderMusic" to="." method="_on_h_slider_music_focus_exited"]
+[connection signal="value_changed" from="HBoxContainer4/HSliderMusic" to="." method="_on_h_slider_music_value_changed"]
+[connection signal="focus_exited" from="HBoxContainer5/HSliderMaster" to="." method="_on_h_slider_master_focus_exited"]
+[connection signal="value_changed" from="HBoxContainer5/HSliderMaster" to="." method="_on_h_slider_master_value_changed"]
+[connection signal="focus_exited" from="ButtonAtras" to="." method="_on_button_atras_focus_exited"]
+[connection signal="pressed" from="ButtonAtras" to="." method="_on_button_atras_pressed"]

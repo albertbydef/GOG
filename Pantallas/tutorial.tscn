@@ -1,0 +1,710 @@
+[gd_scene load_steps=46 format=3 uid="uid://cqibf6lmy5rs4"]
+
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="1_ehkex"]
+[ext_resource type="Script" path="res://Pantallas/tutorial.gd" id="1_miidp"]
+[ext_resource type="Texture2D" uid="uid://cey81hf0nm0hm" path="res://Assets/tutorial/Keyboard Letters and Symbols.png" id="2_iswt2"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/Salto.ogv" id="3_s2wih"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/CaminarDerechaIzquierda.ogv" id="4_ynfco"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/SaltarDerechaIzquierda.ogv" id="5_lpx33"]
+[ext_resource type="Texture2D" uid="uid://biv4xahe3lssl" path="res://Assets/tutorial/Keyboard Extras.png" id="6_luy4o"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/Disparar.ogv" id="7_q3oig"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/CambiarFlecha.ogv" id="8_mru3y"]
+[ext_resource type="VideoStream" path="res://Assets/tutorial/PasarDialogos.ogv" id="9_32q4j"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="11_8cjsn"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="12_ljse7"]
+[ext_resource type="AudioStream" uid="uid://bv78oriobi1qu" path="res://Assets/Audio/SFX_UI_Exit.wav" id="13_4215b"]
+[ext_resource type="AudioStream" uid="uid://cbm7hdickt2m2" path="res://Assets/Audio/SFX_UI_CloseMenu.wav" id="14_xybas"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gpfai"]
+bg_color = Color(0.0823529, 0.196078, 0.176471, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_flyis"]
+font = ExtResource("1_ehkex")
+font_size = 12
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qw54g"]
+font = ExtResource("1_ehkex")
+font_size = 8
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4bat"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67s2n"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(96, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5hcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4bat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67s2n")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="Theme" id="Theme_fa8fs"]
+default_font_size = 6
+
+[sub_resource type="Theme" id="Theme_cvgw0"]
+default_font_size = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exveq"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duket"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5jlb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exveq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duket")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63gl5"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l15ot"]
+atlas = ExtResource("2_iswt2")
+region = Rect2(48, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywprr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63gl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l15ot")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hl4tj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4bat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67s2n")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57sx6"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(64, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iu2k"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(64, 96, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13x3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57sx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iu2k")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mc4d"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(96, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlb4l"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(96, 80, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbbhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mc4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlb4l")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivr67"]
+font = ExtResource("1_ehkex")
+font_size = 8
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn6jw"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbrb3"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(0, 64, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7tb5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn6jw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbrb3")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_458pb"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(96, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51nrh"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(96, 80, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdqsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_458pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51nrh")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxxhf"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(64, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_472v1"]
+atlas = ExtResource("6_luy4o")
+region = Rect2(64, 96, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0v2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxxhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_472v1")
+}],
+"loop": true,
+"name": &"Salto",
+"speed": 1.0
+}]
+
+[node name="CanvasLayerTutorial" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_miidp")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 44.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 236.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gpfai")
+
+[node name="VBoxContainerSalto" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelSalto" type="Label" parent="Panel/VBoxContainerSalto"]
+layout_mode = 2
+text = "Salto"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerSalto"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelSaltoDesc" type="Label" parent="Panel/VBoxContainerSalto/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa la tecla  "
+label_settings = SubResource("LabelSettings_qw54g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerSalto/HBoxContainer"]
+position = Vector2(203.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_c5hcf")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="VideoStreamPlayerSalto" type="VideoStreamPlayer" parent="Panel/VBoxContainerSalto"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("3_s2wih")
+expand = true
+
+[node name="ButtonSiguienteSalto" type="Button" parent="Panel/VBoxContainerSalto"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_fa8fs")
+text = "Siguiente"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerSalto"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="VBoxContainerCaminar" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelCaminar" type="Label" parent="Panel/VBoxContainerCaminar"]
+layout_mode = 2
+text = "Caminar"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerCaminar"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelCaminarDesc" type="Label" parent="Panel/VBoxContainerCaminar/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa la tecla    para caminar hacia la izquierda.
+Pulsa la tecla    para caminar hacia la derecha."
+label_settings = SubResource("LabelSettings_qw54g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerCaminar/HBoxContainer"]
+position = Vector2(104, 3)
+sprite_frames = SubResource("SpriteFrames_p5jlb")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.777857
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Panel/VBoxContainerCaminar/HBoxContainer"]
+position = Vector2(115, 15)
+sprite_frames = SubResource("SpriteFrames_ywprr")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.791638
+
+[node name="VideoStreamPlayerCaminar" type="VideoStreamPlayer" parent="Panel/VBoxContainerCaminar"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("4_ynfco")
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainerCaminar"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonAtrasCaminar" type="Button" parent="Panel/VBoxContainerCaminar/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Atras"
+
+[node name="ButtonSiguienteCaminar" type="Button" parent="Panel/VBoxContainerCaminar/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Siguiente"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerCaminar"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="VBoxContainerSaltoDirec" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelSaltoDirec" type="Label" parent="Panel/VBoxContainerSaltoDirec"]
+layout_mode = 2
+text = "Salto Direccional"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerSaltoDirec"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelSaltoDirecDesc" type="Label" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa       a la vez para saltar a la derecha.
+Pulsa       a la vez para salatr a la izquierda."
+label_settings = SubResource("LabelSettings_qw54g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer"]
+position = Vector2(60, 15)
+sprite_frames = SubResource("SpriteFrames_p5jlb")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.647099
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer"]
+position = Vector2(63, 3)
+sprite_frames = SubResource("SpriteFrames_ywprr")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.660866
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer"]
+position = Vector2(76, 15)
+sprite_frames = SubResource("SpriteFrames_hl4tj")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.024433
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer"]
+position = Vector2(78, 3)
+sprite_frames = SubResource("SpriteFrames_hl4tj")
+animation = &"Salto"
+autoplay = "Salto"
+frame_progress = 0.024433
+
+[node name="VideoStreamPlayerSaltoDirec" type="VideoStreamPlayer" parent="Panel/VBoxContainerSaltoDirec"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("5_lpx33")
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainerSaltoDirec"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonAtrasSaltoDirec" type="Button" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Atras"
+
+[node name="ButtonSiguienteSaltoDirec" type="Button" parent="Panel/VBoxContainerSaltoDirec/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Siguiente"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerSaltoDirec"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="VBoxContainerDisparo" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelDisparo" type="Label" parent="Panel/VBoxContainerDisparo"]
+layout_mode = 2
+text = "Disparo"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerDisparo"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelDisparoDesc" type="Label" parent="Panel/VBoxContainerDisparo/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa        o        para disparar."
+label_settings = SubResource("LabelSettings_qw54g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerDisparo/HBoxContainer"]
+position = Vector2(108, 3)
+sprite_frames = SubResource("SpriteFrames_13x3a")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Panel/VBoxContainerDisparo/HBoxContainer"]
+position = Vector2(163, 3)
+sprite_frames = SubResource("SpriteFrames_cbbhl")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="VideoStreamPlayerDisparo" type="VideoStreamPlayer" parent="Panel/VBoxContainerDisparo"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("7_q3oig")
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainerDisparo"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonAtrasDisparo" type="Button" parent="Panel/VBoxContainerDisparo/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Atras"
+
+[node name="ButtonSiguienteDisparo" type="Button" parent="Panel/VBoxContainerDisparo/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Siguiente"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerDisparo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="VBoxContainerTipoFlecha" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelTipoFlecha" type="Label" parent="Panel/VBoxContainerTipoFlecha"]
+layout_mode = 2
+text = "Tipos de flecha."
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerTipoFlecha"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelTipoFlechaDesc" type="Label" parent="Panel/VBoxContainerTipoFlecha/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa      para cambiar el tipo de flecha equipada.
+Hay tres tipos de flecha:
+Flechas de  fuego: Daño x3 a enemigos tipo hielo.
+Flechas de hielo: Daño x3 a enemigos tipo tierra.
+Flechas electro: Daño x3  a enemigos tipo fuego."
+label_settings = SubResource("LabelSettings_ivr67")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerTipoFlecha/HBoxContainer"]
+position = Vector2(54, 2)
+sprite_frames = SubResource("SpriteFrames_7tb5q")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="VideoStreamPlayerTipoFlecha" type="VideoStreamPlayer" parent="Panel/VBoxContainerTipoFlecha"]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("8_mru3y")
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainerTipoFlecha"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonAtrasTipoFlecha" type="Button" parent="Panel/VBoxContainerTipoFlecha/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Atras"
+
+[node name="ButtonSiguienteTipoFlecha" type="Button" parent="Panel/VBoxContainerTipoFlecha/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fa8fs")
+text = "Siguiente"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerTipoFlecha"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="VBoxContainerDialogos" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 206.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LabelDialogos" type="Label" parent="Panel/VBoxContainerDialogos"]
+layout_mode = 2
+text = "Dialogos"
+label_settings = SubResource("LabelSettings_flyis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainerDialogos"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelDialogosDesc" type="Label" parent="Panel/VBoxContainerDialogos/HBoxContainer"]
+layout_mode = 2
+text = "Pulsa la tecla       o       para pasar  dialogos"
+label_settings = SubResource("LabelSettings_qw54g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainerDialogos/HBoxContainer"]
+position = Vector2(118, 2)
+sprite_frames = SubResource("SpriteFrames_gdqsv")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Panel/VBoxContainerDialogos/HBoxContainer"]
+position = Vector2(166, 2)
+sprite_frames = SubResource("SpriteFrames_s0v2g")
+animation = &"Salto"
+autoplay = "Salto"
+
+[node name="VideoStreamPlayerDialogos" type="VideoStreamPlayer" parent="Panel/VBoxContainerDialogos"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("9_32q4j")
+expand = true
+
+[node name="ButtonAtrasDialogos" type="Button" parent="Panel/VBoxContainerDialogos"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_fa8fs")
+text = "Atras"
+
+[node name="ButtonSalir" type="Button" parent="Panel/VBoxContainerDialogos"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_cvgw0")
+text = "Salir"
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8cjsn")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ljse7")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4215b")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerAtras" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_xybas")
+bus = &"SFX"
+
+[connection signal="finished" from="Panel/VBoxContainerSalto/VideoStreamPlayerSalto" to="." method="_on_video_stream_player_salto_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerSalto/ButtonSiguienteSalto" to="." method="_on_button_siguiente_salto_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerSalto/ButtonSiguienteSalto" to="." method="_on_button_siguiente_salto_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerSalto/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerSalto/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="finished" from="Panel/VBoxContainerCaminar/VideoStreamPlayerCaminar" to="." method="_on_video_stream_player_caminar_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerCaminar/HBoxContainer2/ButtonAtrasCaminar" to="." method="_on_button_atras_caminar_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerCaminar/HBoxContainer2/ButtonAtrasCaminar" to="." method="_on_button_atras_caminar_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerCaminar/HBoxContainer2/ButtonSiguienteCaminar" to="." method="_on_button_siguiente_caminar_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerCaminar/HBoxContainer2/ButtonSiguienteCaminar" to="." method="_on_button_siguiente_caminar_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerCaminar/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerCaminar/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="finished" from="Panel/VBoxContainerSaltoDirec/VideoStreamPlayerSaltoDirec" to="." method="_on_video_stream_player_salto_direc_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerSaltoDirec/HBoxContainer2/ButtonAtrasSaltoDirec" to="." method="_on_button_atras_salto_direc_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerSaltoDirec/HBoxContainer2/ButtonAtrasSaltoDirec" to="." method="_on_button_atras_salto_direc_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerSaltoDirec/HBoxContainer2/ButtonSiguienteSaltoDirec" to="." method="_on_button_siguiente_salto_direc_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerSaltoDirec/HBoxContainer2/ButtonSiguienteSaltoDirec" to="." method="_on_button_siguiente_salto_direc_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerSaltoDirec/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerSaltoDirec/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="finished" from="Panel/VBoxContainerDisparo/VideoStreamPlayerDisparo" to="." method="_on_video_stream_player_disparo_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerDisparo/HBoxContainer2/ButtonAtrasDisparo" to="." method="_on_button_atras_disparo_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerDisparo/HBoxContainer2/ButtonAtrasDisparo" to="." method="_on_button_atras_disparo_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerDisparo/HBoxContainer2/ButtonSiguienteDisparo" to="." method="_on_button_siguiente_disparo_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerDisparo/HBoxContainer2/ButtonSiguienteDisparo" to="." method="_on_button_siguiente_disparo_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerDisparo/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerDisparo/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="finished" from="Panel/VBoxContainerTipoFlecha/VideoStreamPlayerTipoFlecha" to="." method="_on_video_stream_player_tipo_flecha_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerTipoFlecha/HBoxContainer2/ButtonAtrasTipoFlecha" to="." method="_on_button_atras_tipo_flecha_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerTipoFlecha/HBoxContainer2/ButtonAtrasTipoFlecha" to="." method="_on_button_atras_tipo_flecha_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerTipoFlecha/HBoxContainer2/ButtonSiguienteTipoFlecha" to="." method="_on_button_siguiente_tipo_flecha_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerTipoFlecha/HBoxContainer2/ButtonSiguienteTipoFlecha" to="." method="_on_button_siguiente_tipo_flecha_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerTipoFlecha/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerTipoFlecha/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="finished" from="Panel/VBoxContainerDialogos/VideoStreamPlayerDialogos" to="." method="_on_video_stream_player_dialogos_finished"]
+[connection signal="focus_exited" from="Panel/VBoxContainerDialogos/ButtonAtrasDialogos" to="." method="_on_button_atras_dialogos_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerDialogos/ButtonAtrasDialogos" to="." method="_on_button_atras_dialogos_pressed"]
+[connection signal="focus_exited" from="Panel/VBoxContainerDialogos/ButtonSalir" to="." method="_on_button_salir_focus_exited"]
+[connection signal="pressed" from="Panel/VBoxContainerDialogos/ButtonSalir" to="." method="_on_button_salir_pressed"]

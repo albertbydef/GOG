@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://di7n85h0ioslj"]
+
+[ext_resource type="Script" path="res://IcedMountain.gd" id="1_5bxt4"]
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="2_2yabd"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="3_kl10u"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="4_5j0y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pcpy"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_grsrv"]
+font = ExtResource("3_kl10u")
+
+[node name="IcedMountain" type="Node"]
+script = ExtResource("1_5bxt4")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_2yabd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 122.0
+offset_top = 106.0
+offset_right = 293.0
+offset_bottom = 146.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8pcpy")
+text = "Montaña Helada"
+label_settings = SubResource("LabelSettings_grsrv")
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("4_5j0y3")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

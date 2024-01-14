@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://0bwpqy6kdu80"]
+
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="1_qklkg"]
+[ext_resource type="Script" path="res://Niveles/savage_forest.gd" id="1_vkpo2"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="2_weiei"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="3_3br6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_we3mk"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_j16i6"]
+font = ExtResource("2_weiei")
+
+[node name="SavageForest" type="Node"]
+script = ExtResource("1_vkpo2")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qklkg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 132.0
+offset_top = 107.0
+offset_right = 303.0
+offset_bottom = 147.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_we3mk")
+text = "Bosque Salvaje"
+label_settings = SubResource("LabelSettings_j16i6")
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("3_3br6k")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

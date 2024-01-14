@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://yamsrumtqmr7"
+path="res://.godot/imported/Of Far Different Nature - Vengeance Electro [v2] (CC-BY 4.0).ogg-f5f2159a091e4e3574f9be4bf5973e80.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Of Far Different Nature - Vengeance Electro [v2] (CC-BY 4.0).ogg"
+dest_files=["res://.godot/imported/Of Far Different Nature - Vengeance Electro [v2] (CC-BY 4.0).ogg-f5f2159a091e4e3574f9be4bf5973e80.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

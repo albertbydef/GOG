@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwxjj2l57s08j"]
+
+[ext_resource type="Script" path="res://Pantallas/main_menu.gd" id="1_f54x8"]
+[ext_resource type="Texture2D" uid="uid://b7k621gd67k4g" path="res://Assets/pantallas/backgrounds/MainMenu_background.png" id="1_qfuva"]
+[ext_resource type="Texture2D" uid="uid://dlo80hp3vl0i8" path="res://Assets/pantallas/logoGodsOfGaia/LogoGodsOfGaia.png" id="2_kunnm"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="4_5ei0c"]
+[ext_resource type="PackedScene" uid="uid://dsgrrlwy1jjl7" path="res://Pantallas/levels.tscn" id="5_qh0nr"]
+[ext_resource type="PackedScene" uid="uid://drgt7rl84l5fq" path="res://Pantallas/settings.tscn" id="6_f84al"]
+[ext_resource type="PackedScene" uid="uid://cqibf6lmy5rs4" path="res://Pantallas/tutorial.tscn" id="7_m7s6l"]
+[ext_resource type="AudioStream" uid="uid://cwtcgph4omf7q" path="res://Assets/Audio/Music/Theme_-_Music_Box_-_Dream_Dance.ogg" id="11_3pl3v"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="14_pbk6l"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="15_4ybbm"]
+[ext_resource type="AudioStream" uid="uid://bv78oriobi1qu" path="res://Assets/Audio/SFX_UI_Exit.wav" id="17_7oja4"]
+
+[sub_resource type="Theme" id="Theme_ott7s"]
+default_font = ExtResource("4_5ei0c")
+default_font_size = 16
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_f54x8")
+
+[node name="ParallaxBackgroundMainMenu" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayerMainMenu" type="ParallaxLayer" parent="ParallaxBackgroundMainMenu"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackgroundMainMenu/ParallaxLayerMainMenu"]
+position = Vector2(217.5, 121)
+scale = Vector2(0.231771, 0.242593)
+texture = ExtResource("1_qfuva")
+
+[node name="Sprite2DLogo" type="Sprite2D" parent="."]
+position = Vector2(213, 80)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kunnm")
+
+[node name="VBoxContainerMainMenu" type="VBoxContainer" parent="."]
+offset_left = 151.0
+offset_top = 139.0
+offset_right = 399.0
+offset_bottom = 240.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_ott7s")
+
+[node name="ButtonStartGame" type="Button" parent="VBoxContainerMainMenu"]
+layout_mode = 2
+text = "Comienza la aventura"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainerMainMenu"]
+layout_mode = 2
+text = "Preferencias"
+
+[node name="ButtonTutorial" type="Button" parent="VBoxContainerMainMenu"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainerMainMenu"]
+layout_mode = 2
+text = "Salir"
+
+[node name="VBoxContainerLevels" parent="." instance=ExtResource("5_qh0nr")]
+
+[node name="VBoxContainerSettings" parent="." instance=ExtResource("6_f84al")]
+
+[node name="CanvasLayerTutorial" parent="." instance=ExtResource("7_m7s6l")]
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_pbk6l")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_4ybbm")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_7oja4")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_3pl3v")
+autoplay = true
+bus = &"Music"
+
+[connection signal="focus_exited" from="VBoxContainerMainMenu/ButtonStartGame" to="." method="_on_button_start_game_focus_exited"]
+[connection signal="pressed" from="VBoxContainerMainMenu/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
+[connection signal="focus_exited" from="VBoxContainerMainMenu/ButtonSettings" to="." method="_on_button_settings_focus_exited"]
+[connection signal="pressed" from="VBoxContainerMainMenu/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="focus_exited" from="VBoxContainerMainMenu/ButtonTutorial" to="." method="_on_button_tutorial_focus_exited"]
+[connection signal="pressed" from="VBoxContainerMainMenu/ButtonTutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="focus_exited" from="VBoxContainerMainMenu/ButtonExit" to="." method="_on_button_exit_focus_exited"]
+[connection signal="pressed" from="VBoxContainerMainMenu/ButtonExit" to="." method="_on_exit_pressed"]

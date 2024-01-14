@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ewjwqam8mx6a"
+path="res://.godot/imported/click (7).wav-b6a25833ddd8334540272dd625d7acba.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Click/click (7).wav"
+dest_files=["res://.godot/imported/click (7).wav-b6a25833ddd8334540272dd625d7acba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

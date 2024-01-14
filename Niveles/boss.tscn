@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dydn3rx8as2p3"]
+
+[ext_resource type="Script" path="res://Niveles/boss.gd" id="1_sglbs"]
+[ext_resource type="Texture2D" uid="uid://bg554g2dw3etg" path="res://Assets/tilesetDesert/backgrounds/level8/1_game_background.png" id="1_uol20"]
+[ext_resource type="PackedScene" uid="uid://vnntbq0wnumy" path="res://player/player.tscn" id="2_baevw"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="4_bm3ve"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d8lb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puy6i"]
+size = Vector2(20, 222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdg7m"]
+size = Vector2(463, 20)
+
+[node name="Boss" type="Node"]
+script = ExtResource("1_sglbs")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(214.5, 121)
+scale = Vector2(0.229688, 0.235185)
+texture = ExtResource("1_uol20")
+
+[node name="ParedInicio" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_d8lb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedInicio"]
+position = Vector2(-11, 111)
+shape = SubResource("RectangleShape2D_puy6i")
+
+[node name="ParedFinal" type="StaticBody2D" parent="."]
+position = Vector2(448, 3)
+collision_layer = 4
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_d8lb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedFinal"]
+position = Vector2(-11, 111)
+shape = SubResource("RectangleShape2D_puy6i")
+
+[node name="floor" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 59
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(211, 237)
+shape = SubResource("RectangleShape2D_rdg7m")
+
+[node name="player" parent="." instance=ExtResource("2_baevw")]
+position = Vector2(31, 209)
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("4_bm3ve")]

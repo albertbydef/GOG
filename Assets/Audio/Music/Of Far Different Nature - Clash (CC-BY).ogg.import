@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cv8yxjdqm4k8b"
+path="res://.godot/imported/Of Far Different Nature - Clash (CC-BY).ogg-226d72e69905aec4c5a5fb718195afd8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Of Far Different Nature - Clash (CC-BY).ogg"
+dest_files=["res://.godot/imported/Of Far Different Nature - Clash (CC-BY).ogg-226d72e69905aec4c5a5fb718195afd8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

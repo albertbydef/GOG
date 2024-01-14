@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk7nc03dp7s27"
+path="res://.godot/imported/lose (9).wav-58f36c5a88452684e62230aad35406d2.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/lose/lose (9).wav"
+dest_files=["res://.godot/imported/lose (9).wav-58f36c5a88452684e62230aad35406d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

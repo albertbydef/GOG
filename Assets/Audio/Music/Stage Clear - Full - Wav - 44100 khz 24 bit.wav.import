@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctu2tp723c6hh"
+path="res://.godot/imported/Stage Clear - Full - Wav - 44100 khz 24 bit.wav-20035b004ef774621cf42a9cf4330890.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Stage Clear - Full - Wav - 44100 khz 24 bit.wav"
+dest_files=["res://.godot/imported/Stage Clear - Full - Wav - 44100 khz 24 bit.wav-20035b004ef774621cf42a9cf4330890.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

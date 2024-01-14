@@ -1,0 +1,387 @@
+[gd_scene load_steps=52 format=3 uid="uid://bettp2fd5js1y"]
+
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="1_acj1g"]
+[ext_resource type="Script" path="res://Niveles/final_town.gd" id="1_da2c1"]
+[ext_resource type="Texture2D" uid="uid://c03tpcbgvpq8o" path="res://Assets/final/town.jpg" id="3_cgru6"]
+[ext_resource type="Texture2D" uid="uid://5dixnhm6c77o" path="res://player/player/Idle.png" id="3_sx8q0"]
+[ext_resource type="Texture2D" uid="uid://dbqwrnqaogx6m" path="res://player/player/Walk.png" id="4_xt0av"]
+[ext_resource type="Texture2D" uid="uid://dmu237dmx0r74" path="res://Assets/NPC/Druid.png" id="5_067ud"]
+[ext_resource type="PackedScene" uid="uid://c1sx32kth144p" path="res://Dialogos/control_dialog.tscn" id="6_6ng2a"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="7_mkiwa"]
+[ext_resource type="Texture2D" uid="uid://drshebryrw3ao" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_000.png" id="7_n3il8"]
+[ext_resource type="Texture2D" uid="uid://cr6i3nqaaaaip" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_001.png" id="8_adrxs"]
+[ext_resource type="Texture2D" uid="uid://10aoxsybbsvi" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_002.png" id="9_w5sxa"]
+[ext_resource type="Texture2D" uid="uid://dnk46vk0dssa" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_003.png" id="10_3mpob"]
+[ext_resource type="Texture2D" uid="uid://xofohfs1b2c0" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_004.png" id="11_js77w"]
+[ext_resource type="Texture2D" uid="uid://cy1mjktrgdvy3" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_005.png" id="12_28loe"]
+[ext_resource type="Texture2D" uid="uid://bh6k248caio7w" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_006.png" id="13_gyfjo"]
+[ext_resource type="Texture2D" uid="uid://cput3andmcn0l" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_007.png" id="14_0fa84"]
+[ext_resource type="Texture2D" uid="uid://b11j784nrsibw" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_008.png" id="15_r7u00"]
+[ext_resource type="Texture2D" uid="uid://bn1tq54wx0nvb" path="res://Assets/Enemies/Boss/Earth/Elemental_03_1_IDLE_009.png" id="16_32354"]
+[ext_resource type="AudioStream" uid="uid://bdohlree5b0s" path="res://Assets/Audio/Music/Of Far Different Nature - Pulse (CC-BY 4.0).ogg" id="19_uicy8"]
+[ext_resource type="AudioStream" uid="uid://b4823qywrir3t" path="res://Assets/Audio/Music/Of Far Different Nature - Epic Departure [v2] (CC-BY).ogg" id="20_5vjj1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0teut"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3l1h"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntn5b"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf15f"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4slkq"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dev4a"]
+atlas = ExtResource("3_sx8q0")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32h7k"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0rk4"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lbpf"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unmi"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jefl0"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pjw1"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsxwv"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubo6w"]
+atlas = ExtResource("4_xt0av")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04ikv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0teut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3l1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntn5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf15f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4slkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dev4a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32h7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0rk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lbpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2unmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jefl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pjw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsxwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubo6w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48nre"]
+size = Vector2(31.1112, 75.5555)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvgrn"]
+atlas = ExtResource("5_067ud")
+region = Rect2(0, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhw0n"]
+atlas = ExtResource("5_067ud")
+region = Rect2(48, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1886"]
+atlas = ExtResource("5_067ud")
+region = Rect2(96, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l73a2"]
+atlas = ExtResource("5_067ud")
+region = Rect2(144, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m35y"]
+atlas = ExtResource("5_067ud")
+region = Rect2(0, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yydwx"]
+atlas = ExtResource("5_067ud")
+region = Rect2(48, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnfr"]
+atlas = ExtResource("5_067ud")
+region = Rect2(96, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvh55"]
+atlas = ExtResource("5_067ud")
+region = Rect2(144, 576, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bccb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvgrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhw0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1886")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l73a2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m35y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yydwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvh55")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cvdv"]
+size = Vector2(31.1112, 75.5555)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0v4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n3il8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_adrxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w5sxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3mpob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_js77w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_28loe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gyfjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0fa84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r7u00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_32354")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqx17"]
+size = Vector2(20.5, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4icyg"]
+size = Vector2(203, 20)
+
+[sub_resource type="Animation" id="Animation_c3w6c"]
+resource_name = "elemental"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elemental/AnimatedSprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctpdx"]
+_data = {
+"elemental": SubResource("Animation_c3w6c")
+}
+
+[node name="FinalTown" type="Node"]
+script = ExtResource("1_da2c1")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_acj1g")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-71.3333, -42.6667)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(213.547, 121.5)
+scale = Vector2(0.0941762, 0.095843)
+texture = ExtResource("3_cgru6")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(-83, -71)
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(183, 137)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_04ikv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(182, 145.333)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_48nre")
+
+[node name="druid" type="CharacterBody2D" parent="."]
+position = Vector2(-150, -102)
+scale = Vector2(1.7, 1.7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="druid"]
+position = Vector2(182.667, 145.333)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_5bccb")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="druid"]
+position = Vector2(182.667, 145.333)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_5cvdv")
+
+[node name="elemental" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="elemental"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(258, 121)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_i0v4d")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elemental"]
+position = Vector2(259.75, 128)
+shape = SubResource("RectangleShape2D_lqx17")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(155, 161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(58, 13)
+shape = SubResource("RectangleShape2D_4icyg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 60.0
+offset_right = 114.0
+offset_bottom = 182.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 119.0
+color = Color(0, 0.027451, 0.0980392, 1)
+
+[node name="ControlDialog" parent="." instance=ExtResource("6_6ng2a")]
+offset_left = -182.13
+offset_top = -67.0
+offset_right = 189.87
+offset_bottom = -4.0
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("7_mkiwa")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ctpdx")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_uicy8")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_5vjj1")
+bus = &"Music"
+
+[connection signal="clear" from="ControlDialog" to="." method="_on_control_dialog_clear"]

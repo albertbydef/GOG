@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://diwjvl2r7j2at"
+path="res://.godot/imported/random (9).wav-ced9126a7565cf9361c38881dec86769.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Random/random (9).wav"
+dest_files=["res://.godot/imported/random (9).wav-ced9126a7565cf9361c38881dec86769.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

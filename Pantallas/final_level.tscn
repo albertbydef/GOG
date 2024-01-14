@@ -1,0 +1,262 @@
+[gd_scene load_steps=27 format=3 uid="uid://dg3ceknkt38mr"]
+
+[ext_resource type="Script" path="res://Pantallas/final_level.gd" id="1_8akhv"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="2_vb8uj"]
+[ext_resource type="LabelSettings" uid="uid://d3belbju11xxk" path="res://Pantallas/notaA.tres" id="3_grax2"]
+[ext_resource type="FontFile" uid="uid://c5jwajq66w05l" path="res://Assets/font/SpaceRunner/Spacerunner-Purple.otf" id="4_usye3"]
+[ext_resource type="FontFile" uid="uid://bawpvpwr28jsr" path="res://Assets/font/SpaceRunner/Spacerunner-Green.otf" id="5_0slmr"]
+[ext_resource type="FontFile" uid="uid://duyyycksty78y" path="res://Assets/font/SpaceRunner/Spacerunner-Orange.otf" id="6_buexv"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="7_405c5"]
+[ext_resource type="Texture2D" uid="uid://bpmcgpwbjwp51" path="res://Assets/Premios/Item 3-1.png.png" id="7_ssqm0"]
+[ext_resource type="Texture2D" uid="uid://d21sb2xx0cayd" path="res://Assets/Premios/FireArrow.png" id="8_wi68i"]
+[ext_resource type="Texture2D" uid="uid://cck5lkja467mo" path="res://Assets/Premios/IceArrow.png" id="9_qkip7"]
+[ext_resource type="Texture2D" uid="uid://p1sv43bdc66h" path="res://Assets/Premios/ElectroArrow.png" id="10_s13eh"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="12_ujg38"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="13_rh1me"]
+[ext_resource type="AudioStream" uid="uid://bv78oriobi1qu" path="res://Assets/Audio/SFX_UI_Exit.wav" id="14_3bfml"]
+[ext_resource type="AudioStream" uid="uid://cbm7hdickt2m2" path="res://Assets/Audio/SFX_UI_CloseMenu.wav" id="15_pp8ro"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wppb7"]
+font = ExtResource("2_vb8uj")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fk6c"]
+font = ExtResource("2_vb8uj")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4inv"]
+font = ExtResource("2_vb8uj")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jd22t"]
+font = ExtResource("4_usye3")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_4eis1"]
+font = ExtResource("5_0slmr")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jyqb"]
+font = ExtResource("6_buexv")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ystt"]
+font = ExtResource("2_vb8uj")
+outline_size = 3
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5iqv"]
+font = ExtResource("2_vb8uj")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uibrl"]
+font = ExtResource("2_vb8uj")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwj5j"]
+font = ExtResource("2_vb8uj")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f4be3"]
+font = ExtResource("2_vb8uj")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="FinalLevel" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_8akhv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -114.0
+offset_right = 139.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LabelMessage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nivel Superado"
+label_settings = SubResource("LabelSettings_wppb7")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelScoretitle" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Score:"
+label_settings = SubResource("LabelSettings_4fk6c")
+
+[node name="LabelScore" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("3_grax2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelNoteTitle" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Nota:"
+label_settings = SubResource("LabelSettings_c4inv")
+
+[node name="LabelNoteA" type="Label" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "A"
+label_settings = SubResource("LabelSettings_jd22t")
+
+[node name="LabelRateB" type="Label" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "B"
+label_settings = SubResource("LabelSettings_4eis1")
+
+[node name="LabelRateC" type="Label" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "C"
+label_settings = SubResource("LabelSettings_3jyqb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LabelAwards" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Premio"
+label_settings = SubResource("LabelSettings_0ystt")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRectHealth" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_ssqm0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelNumHealth" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+label_settings = SubResource("LabelSettings_g5iqv")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRectFireArrow" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_wi68i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelNumFireArrow" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+label_settings = SubResource("LabelSettings_uibrl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRectIceArrow" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_qkip7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelNumIceArrow" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+label_settings = SubResource("LabelSettings_mwj5j")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRectElectroArrow" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_s13eh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelNumElectroArrow" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+label_settings = SubResource("LabelSettings_f4be3")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ButtonNextLevel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_vb8uj")
+theme_override_font_sizes/font_size = 10
+text = "Siguiente nivel"
+
+[node name="ButtonRetry" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_vb8uj")
+theme_override_font_sizes/font_size = 10
+text = "Volver a intentar"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_vb8uj")
+theme_override_font_sizes/font_size = 10
+text = "Salir"
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("7_405c5")]
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ujg38")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rh1me")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_3bfml")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerAtras" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_pp8ro")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="VBoxContainer/ButtonNextLevel" to="." method="_on_button_next_level_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonNextLevel" to="." method="_on_button_next_level_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/ButtonRetry" to="." method="_on_button_retry_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

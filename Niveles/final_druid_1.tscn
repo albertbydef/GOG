@@ -1,0 +1,416 @@
+[gd_scene load_steps=41 format=3 uid="uid://bl0pjaa2cxu48"]
+
+[ext_resource type="Script" path="res://Niveles/final_druid_1.gd" id="1_ak88y"]
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="2_3wfxb"]
+[ext_resource type="Texture2D" uid="uid://c1oq43as345fm" path="res://Assets/Intro/Picsart_23-12-29_20-38-46-872.jpg" id="3_lwk8x"]
+[ext_resource type="Texture2D" uid="uid://5dixnhm6c77o" path="res://player/player/Idle.png" id="4_mbhul"]
+[ext_resource type="Texture2D" uid="uid://dbqwrnqaogx6m" path="res://player/player/Walk.png" id="5_1rvk1"]
+[ext_resource type="Texture2D" uid="uid://dmu237dmx0r74" path="res://Assets/NPC/Druid.png" id="6_cogc3"]
+[ext_resource type="PackedScene" uid="uid://c1sx32kth144p" path="res://Dialogos/control_dialog.tscn" id="7_b31sn"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="8_4n2en"]
+[ext_resource type="AudioStream" uid="uid://cn17w4g4hhuit" path="res://Assets/Audio/Music/Of Far Different Nature - Pavane [short] (CC-BY).ogg" id="9_whqv6"]
+[ext_resource type="AudioStream" uid="uid://g5gpoklcu6ou" path="res://Assets/Audio/Music/Of Far Different Nature - Zwischenwelt (CC-BY).ogg" id="10_kltxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0teut"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3l1h"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntn5b"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf15f"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4slkq"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dev4a"]
+atlas = ExtResource("4_mbhul")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32h7k"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0rk4"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lbpf"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unmi"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jefl0"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pjw1"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsxwv"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubo6w"]
+atlas = ExtResource("5_1rvk1")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t284l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0teut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3l1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntn5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf15f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4slkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dev4a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32h7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0rk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lbpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2unmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jefl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pjw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsxwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubo6w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utdsg"]
+size = Vector2(31.1112, 75.5555)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvgrn"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(0, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhw0n"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(48, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1886"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(96, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l73a2"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(144, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m35y"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(0, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yydwx"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(48, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnfr"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(96, 576, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvh55"]
+atlas = ExtResource("6_cogc3")
+region = Rect2(144, 576, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j2ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvgrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhw0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1886")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l73a2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m35y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yydwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvh55")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5chhs"]
+size = Vector2(31.1112, 75.5555)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o60c1"]
+size = Vector2(203, 20)
+
+[sub_resource type="Animation" id="Animation_unpyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(153, 167)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("druid:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-68, -95)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, -65)]
+}
+
+[sub_resource type="Animation" id="Animation_cbsr1"]
+resource_name = "earthquake"
+length = 0.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(153, 167), Vector2(153, 169)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("druid:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-68, -95), Vector2(-68, -93)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-83, -65), Vector2(-83, -63)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lpj7"]
+_data = {
+"RESET": SubResource("Animation_unpyn"),
+"earthquake": SubResource("Animation_cbsr1")
+}
+
+[node name="FinalDruid1" type="Node"]
+script = ExtResource("1_ak88y")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_3wfxb")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-71.3333, -42.6667)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(213.547, 121.5)
+scale = Vector2(0.0941762, 0.095843)
+texture = ExtResource("3_lwk8x")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(-83, -65)
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(183, 137)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_t284l")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(182, 145.333)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_utdsg")
+
+[node name="druid" type="CharacterBody2D" parent="."]
+position = Vector2(-68, -95)
+scale = Vector2(1.7, 1.7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="druid"]
+position = Vector2(182.667, 145.333)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4j2ev")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="druid"]
+position = Vector2(182.667, 145.333)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_5chhs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(153, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(58, 13)
+shape = SubResource("RectangleShape2D_o60c1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 60.0
+offset_right = 114.0
+offset_bottom = 182.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 119.0
+color = Color(0, 0.027451, 0.0980392, 1)
+
+[node name="ControlDialog" parent="." instance=ExtResource("7_b31sn")]
+offset_left = -182.13
+offset_top = -67.0
+offset_right = 189.87
+offset_bottom = -4.0
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("8_4n2en")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0lpj7")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_whqv6")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_kltxm")
+bus = &"Music"
+
+[connection signal="clear" from="ControlDialog" to="." method="_on_control_dialog_clear"]

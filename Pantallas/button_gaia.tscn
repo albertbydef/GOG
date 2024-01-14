@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfwwwf5hax3so"]
+
+[ext_resource type="Script" path="res://Pantallas/button_gaia.gd" id="1_plulq"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="2_c0tm3"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="3_qky6f"]
+
+[node name="ButtonGaia" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_plulq")
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c0tm3")
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qky6f")
+
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1pbj4aec7kn1"
+path="res://.godot/imported/Of Far Different Nature - Hurry! (CC-BY).ogg-15d2d73ab89d9e84c63aa1c6d818f0f0.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Of Far Different Nature - Hurry! (CC-BY).ogg"
+dest_files=["res://.godot/imported/Of Far Different Nature - Hurry! (CC-BY).ogg-15d2d73ab89d9e84c63aa1c6d818f0f0.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

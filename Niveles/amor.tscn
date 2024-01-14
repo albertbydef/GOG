@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddc632sqcpafg"]
+
+[ext_resource type="Script" path="res://Niveles/amor.gd" id="1_ihxhs"]
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="2_f6ktj"]
+[ext_resource type="Texture2D" uid="uid://djesr2rh27amm" path="res://Assets/Jess/_f1cb1a91-49ba-4cb9-a638-99c99e3fa0f5.jpeg" id="3_5bxa0"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="4_igeeh"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="5_ebe34"]
+[ext_resource type="AudioStream" uid="uid://cwtcgph4omf7q" path="res://Assets/Audio/Music/Theme_-_Music_Box_-_Dream_Dance.ogg" id="6_3ocq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_daefe"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rdv5"]
+font = ExtResource("4_igeeh")
+font_size = 11
+font_color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2i87"]
+font = ExtResource("4_igeeh")
+font_size = 10
+font_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="Amor" type="Node"]
+script = ExtResource("1_ihxhs")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f6ktj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_5bxa0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 63.0
+offset_top = 11.0
+offset_right = 363.0
+offset_bottom = 208.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_daefe")
+text = "Muy bien mi amor! No hay nada
+que se te resista! Gracias
+por todo lo que me
+aportas eres mi musa, mi
+motivación, mi inspiración
+gracias a ti siento que lo
+puedo conseguir todo, dentro
+de poco surgirá el fruto de
+nuestro amor, seras la mejor
+madre del mundo y yo intentare
+dar lo mejor de mi, nuestra hija
+sentira nuestro amor. Felices reyes!
+         ¡¡¡¡Te quiero!!!
+"
+label_settings = SubResource("LabelSettings_7rdv5")
+horizontal_alignment = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_daefe")
+text = "DAME EL CODIGO \"Júlia\" Y RECLAMA
+TU REGALO"
+label_settings = SubResource("LabelSettings_o2i87")
+horizontal_alignment = 1
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("5_ebe34")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3ocq7")
+autoplay = true
+bus = &"Music"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

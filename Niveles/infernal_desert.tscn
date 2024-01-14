@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0x5h8dagc80t"]
+
+[ext_resource type="Script" path="res://Niveles/infernal_desert.gd" id="1_mbxr8"]
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="2_n1h0n"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="3_hbotq"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="4_gmfhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hey0t"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cg73e"]
+font = ExtResource("3_hbotq")
+
+[node name="InfernalDesert" type="Node"]
+script = ExtResource("1_mbxr8")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_n1h0n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 111.0
+offset_top = 107.0
+offset_right = 318.0
+offset_bottom = 147.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hey0t")
+text = "Desierto Infernal"
+label_settings = SubResource("LabelSettings_cg73e")
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("4_gmfhn")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

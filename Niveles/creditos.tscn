@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://ndbjgdw0t2wm"]
+
+[ext_resource type="Texture2D" uid="uid://dvgnp0nsjy2lu" path="res://Assets/Intro/blackbg.png" id="1_e22wk"]
+[ext_resource type="Script" path="res://Niveles/creditos.gd" id="1_hbrfq"]
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="2_gxb43"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="3_sc0m1"]
+[ext_resource type="AudioStream" uid="uid://yamsrumtqmr7" path="res://Assets/Audio/Music/Of Far Different Nature - Vengeance Electro [v2] (CC-BY 4.0).ogg" id="5_y5ss2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqm2e"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gm1yt"]
+font = ExtResource("2_gxb43")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cx2g1"]
+font = ExtResource("2_gxb43")
+font_size = 10
+
+[node name="Creditos" type="Node"]
+script = ExtResource("1_hbrfq")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(212, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_e22wk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -87.5
+offset_right = 133.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Creditos"
+label_settings = SubResource("LabelSettings_gm1yt")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Director"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "David Masnou Mayoral"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Guionista, desarrolador y diseñador"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Albert Seminario Muelas"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Música"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Of Far Different Nature"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Gracias"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqm2e")
+text = "Jessica Bujalance Caballero"
+label_settings = SubResource("LabelSettings_cx2g1")
+horizontal_alignment = 1
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("3_sc0m1")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 63.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y5ss2")
+autoplay = true
+bus = &"Music"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

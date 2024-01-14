@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpwnaysdp42ej"]
+
+[ext_resource type="FontFile" uid="uid://cppv0pgxwifhi" path="res://Assets/font/NicoFontPack-v1.0/Base Font Files/NicoClean/NicoClean-Monospaced.ttf" id="1_06278"]
+[ext_resource type="Script" path="res://Pantallas/menu_pause.gd" id="1_hcno5"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="3_0jhco"]
+[ext_resource type="AudioStream" uid="uid://cx6kmtudqbt51" path="res://Assets/Audio/SFX_UI_MenuSelections.wav" id="4_tnllm"]
+[ext_resource type="AudioStream" uid="uid://dn30353ldxxju" path="res://Assets/Audio/SFX_UI_Confirm.wav" id="5_ntpn1"]
+[ext_resource type="AudioStream" uid="uid://bv78oriobi1qu" path="res://Assets/Audio/SFX_UI_Exit.wav" id="6_6un8b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xw4qd"]
+font = ExtResource("1_06278")
+font_size = 14
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MenuPause" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_hcno5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 145.0
+offset_top = 77.0
+offset_right = 281.0
+offset_bottom = 164.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_xw4qd")
+horizontal_alignment = 1
+
+[node name="ButtonContinue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_06278")
+theme_override_font_sizes/font_size = 10
+text = "Continuar"
+
+[node name="ButtonRetry" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_06278")
+theme_override_font_sizes/font_size = 10
+text = "Volver a intentar"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_06278")
+theme_override_font_sizes/font_size = 10
+text = "Salir"
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("3_0jhco")]
+
+[node name="AudioStreamPlayerMenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tnllm")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ntpn1")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6un8b")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="VBoxContainer/ButtonContinue" to="." method="_on_button_continue_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/ButtonRetry" to="." method="_on_button_retry_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

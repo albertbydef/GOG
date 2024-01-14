@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://toy2h8csaxm7"]
+
+[ext_resource type="Texture2D" uid="uid://dn0o5f1q8h687" path="res://Assets/Intro/Origen.jpg" id="1_ci8fe"]
+[ext_resource type="Script" path="res://Niveles/intro.gd" id="1_cjuui"]
+[ext_resource type="Texture2D" uid="uid://cgbqkx5ddci8w" path="res://Assets/Intro/Nave.jpg" id="3_k2un0"]
+[ext_resource type="PackedScene" uid="uid://c1sx32kth144p" path="res://Dialogos/control_dialog.tscn" id="3_w7yau"]
+[ext_resource type="PackedScene" uid="uid://c3ml3f342bwn8" path="res://Niveles/canvas_layer_transition.tscn" id="4_1ifnm"]
+[ext_resource type="Texture2D" uid="uid://i1ylm0db523p" path="res://Assets/Intro/Pueblo.jpg" id="4_8qv0p"]
+[ext_resource type="AudioStream" uid="uid://cv8yxjdqm4k8b" path="res://Assets/Audio/Music/Of Far Different Nature - Clash (CC-BY).ogg" id="7_x6yqj"]
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_cjuui")
+
+[node name="ParallaxBackgroundLaNiebla" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundLaNiebla"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackgroundLaNiebla/ParallaxLayer"]
+position = Vector2(213.547, 121.5)
+scale = Vector2(0.0941762, 0.095843)
+texture = ExtResource("1_ci8fe")
+
+[node name="ParallaxBackgroundLaNave" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundLaNave"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackgroundLaNave/ParallaxLayer"]
+position = Vector2(212.5, 119.5)
+scale = Vector2(0.226563, 0.228704)
+texture = ExtResource("3_k2un0")
+
+[node name="ParallaxBackgroundElPueblo" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundElPueblo"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackgroundElPueblo/ParallaxLayer"]
+position = Vector2(213.047, 118.5)
+scale = Vector2(0.0948257, 0.0973826)
+texture = ExtResource("4_8qv0p")
+
+[node name="ControlDialog" parent="." instance=ExtResource("3_w7yau")]
+
+[node name="CanvasLayerTransition" parent="." instance=ExtResource("4_1ifnm")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_x6yqj")
+autoplay = true
+bus = &"Music"
+
+[connection signal="clear" from="ControlDialog" to="." method="_on_control_dialog_clear"]
